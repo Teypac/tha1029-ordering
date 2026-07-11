@@ -32,19 +32,6 @@ app.listen(PORT, () => {
 
 const nodemailer = require("nodemailer");
 
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    requireTLS: true,
-
-    auth: {
-        user: "iteyonb@gmail.com",
-        pass: "vgrkvbfdqflzygiz"
-    },
-
-    family: 4
-});
 app.post("/order", async (req, res) => {
     const { customerName, customerPhone, customerEmail, cart } = req.body;
 
@@ -61,7 +48,18 @@ Total: $${cart.reduce((t, i) => t + i.price, 0).toFixed(2)}
     `;
 
     try {
-     
+        // Email transporter
+        let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: "iteyonb@gmail.com",
+        pass: "vgrk vbfd qflz ygiz"
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+});
+
         // Send email
         await transporter.sendMail({
             from: "iteyonb@gmail.com",
@@ -84,7 +82,18 @@ app.post("/api/sowlbowl-preorder", async (req, res) => {
         return res.status(400).json({ message: "All fields are required." });
     }
 
-        const mailOptions = {
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "iteyonb@gmail.com",
+            pass: "vgrk vbfd qflz ygiz"
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+    const mailOptions = {
         from: "iteyonb@gmail.com",
         to: "iteyonb@gmail.com",
         subject: "New Soul Bowl Sunday Pre‑Order",
@@ -114,7 +123,14 @@ Pickup Location: ${pickupLocation}
 app.post("/mealprep-intake", async (req, res) => {
     const data = req.body;
 
-   
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "iteyonb@gmail.com",
+            pass: "vgrk vbfd qflz ygiz"
+        }
+    });
+
     const mailOptions = {
         from: "iteyonb@gmail.com",
         to: "iteyonb@gmail.com",
