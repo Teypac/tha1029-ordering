@@ -796,7 +796,7 @@ async function submitOrder() {
     };
 
     try {
-        const response = await fetch("http://localhost:3000/order", {
+        const response = await fetch("https://tha1029-ordering.onrender.com/order", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(orderData)
