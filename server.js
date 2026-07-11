@@ -1,9 +1,14 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
 app.use(express.json());
 
 app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "landing.html"));
+});
 
 app.listen(3000, () => {
     console.log("Tha 10.29 running on port 3000");
