@@ -46,12 +46,15 @@ Total: $${cart.reduce((t, i) => t + i.price, 0).toFixed(2)}
     try {
         // Email transporter
         let transporter = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                user: "iteyonb@gmail.com",
-                pass: "vgrk vbfd qflz ygiz"
-            }
-        });
+    service: "gmail",
+    auth: {
+        user: "iteyonb@gmail.com",
+        pass: "vgrk vbfd qflz ygiz"
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+});
 
         // Send email
         await transporter.sendMail({
@@ -68,17 +71,51 @@ Total: $${cart.reduce((t, i) => t + i.price, 0).toFixed(2)}
     }
 });
 
-app.post("/api/sowlbowl-preorder", (req, res) => {
-    console.log("New preorder:", req.body);
-
+app.post("/api/sowlbowl-preorder", async (req, res) => {
     const { name, phone, orderDetails, pickupTime, pickupLocation } = req.body;
 
     if (!name || !phone || !orderDetails || !pickupTime || !pickupLocation) {
         return res.status(400).json({ message: "All fields are required." });
     }
 
-    res.json({ message: "Pre-order submitted successfully." });
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "iteyonb@gmail.com",
+            pass: "vgrk vbfd qflz ygiz"
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+    const mailOptions = {
+        from: "iteyonb@gmail.com",
+        to: "iteyonb@gmail.com",
+        subject: "New Soul Bowl Sunday Pre‑Order",
+        text: `
+New Soul Bowl Pre‑Order
+
+Name: ${name}
+Phone: ${phone}
+
+Order:
+${orderDetails}
+
+Pickup Time: ${pickupTime}
+Pickup Location: ${pickupLocation}
+        `
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        res.json({ success: true, message: "Pre‑order submitted successfully." });
+    } catch (err) {
+        console.log("Email error:", err);
+        res.status(500).json({ success: false, message: "Email failed." });
+    }
 });
+
 app.post("/mealprep-intake", async (req, res) => {
     const data = req.body;
 
