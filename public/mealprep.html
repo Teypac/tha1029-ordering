@@ -114,7 +114,7 @@ if (!/^\d{3}-\d{3}-\d{4}$/.test(form.phone.value)) {
     return;
 }
 
-      await fetch("/mealprep-intake", {
+      await fetch("https://tha1029-ordering.onrender.com/mealprep-intake", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)

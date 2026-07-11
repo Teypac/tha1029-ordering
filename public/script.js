@@ -250,7 +250,7 @@ async function submitOrder() {
     document.getElementById("customerName").value;
 
   const response = await fetch(
-    "http://localhost:3000/order",
+    "https://tha1029-ordering.onrender.com/order",
     {
       method: "POST",
       headers: {
