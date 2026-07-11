@@ -37,7 +37,8 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: "iteyonb@gmail.com",
         pass: "vgrk vbfd qflz ygiz"
-    }
+    },
+    family: 4
 });
 
 app.post("/order", async (req, res) => {
