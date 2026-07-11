@@ -4,8 +4,6 @@ const app = express();
 
 app.use(express.json());
 
-app.use(express.static("public"));
-
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "landing.html"));
 });
@@ -21,6 +19,8 @@ app.get("/weekly", (req, res) => {
 app.get("/mealprep", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "mealprep.html"));
 });
+
+app.use(express.static("public"));
 
 app.listen(3000, () => {
     console.log("Tha 10.29 running on port 3000");
