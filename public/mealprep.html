@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meal Prep Intake Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 25px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 14px;
+      width: 100%;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Meal Prep Intake Form</h1>
+
+  <form id="mealPrepForm">
+
+    <div class="section-title">Basic Information</div>
+    <input name="name" placeholder="Full Name" required />
+    <input 
+    type="tel" 
+    id="mealPrepPhone" 
+    name="phone"
+    placeholder="xxx-xxx-xxxx" 
+    maxlength="12"
+    required
+/>
+    <input name="email" placeholder="Email Address" required />
+
+    <div class="section-title">Meal Preferences</div>
+    <input name="mealsPerWeek" placeholder="How many meals per week?" required />
+
+    <div class="section-title">What do you like to eat?</div>
+    <textarea name="foodLikes" placeholder="List proteins, sides, favorite meals, etc." rows="4"></textarea>
+
+    <div class="section-title">Location</div>
+    <input name="city" placeholder="City (ex: Pittsburgh, Atlanta, Los Angeles)" required />
+    <input name="area" placeholder="Part of town / neighborhood (ex: East Liberty, Buckhead, Inglewood)" />
+    <input name="state" placeholder="State (ex: PA, GA, CA)" required />
+
+
+    <div class="section-title">Preferred Day & Time</div>
+    <input name="preferredDay" placeholder="Preferred day (ex: Sunday)" />
+    <input name="preferredTime" placeholder="Preferred time (ex: 4 PM)" />
+
+    <div class="section-title">Notes / Dietary Needs</div>
+    <textarea name="notes" placeholder="Allergies, dislikes, restrictions, etc." rows="4"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("mealPrepForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+  name: form.name.value,
+  phone: form.phone.value,
+  email: form.email.value,
+  mealsPerWeek: form.mealsPerWeek.value,
+  foodLikes: form.foodLikes.value,
+  city: form.city.value,
+  area: form.area.value,
+  state: form.state.value,
+  preferredDay: form.preferredDay.value,
+  preferredTime: form.preferredTime.value,
+  notes: form.notes.value
+};
+
+// Step 3 — Validate phone number format
+if (!/^\d{3}-\d{3}-\d{4}$/.test(form.phone.value)) {
+    alert("Please enter a valid phone number (xxx-xxx-xxxx).");
+    return;
+}
+
+      await fetch("/mealprep-intake", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      alert("Form submitted!");
+      form.reset();
+    });
+    // Auto‑format phone number while typing
+    const phoneInput = document.getElementById("mealPrepPhone");
+
+    phoneInput.addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\D/g, ""); // remove non-digits
+
+        if (value.length > 3 && value.length <= 6) {
+            value = value.replace(/(\d{3})(\d+)/, "$1-$2");
+        } else if (value.length > 6) {
+            value = value.replace(/(\d{3})(\d{3})(\d+)/, "$1-$2-$3");
+        }
+
+        e.target.value = value;
+    });
+  </script>
+
+</body>
+</html>

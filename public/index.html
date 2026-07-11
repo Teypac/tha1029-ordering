@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tha 10.29</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="floatingCart">
+    <div id="floatingCartHeader">
+       🛒 Cart (<span id="floatingCartCount">0</span>)
+    </div>
+
+    <div id="floatingCartContent">
+        <div id="floatingCartItems"></div>
+        <div id="floatingCartTotal"></div>
+        <div id="floatingSoulBowlCart"></div>
+
+    </div>
+</div>
+
+    <h1>Tha 10.29</h1>
+    <h2>Online Ordering</h2>
+
+    <div id="menuTabs" style="display:flex; gap:10px; margin-bottom:20px;">
+        <button class="tabButton" onclick="showTab('homeSection')">Home</button>
+        <button class="tabButton" onclick="showTab('handheldsSection')">Handhelds</button>
+        <button class="tabButton" onclick="showTab('pastaSection')">Pasta</button>
+        <button class="tabButton" onclick="showTab('soulSection')">Soul Bowl Sundays</button>
+        <button class="tabButton" onclick="showTab('cartSection')">Cart</button>
+        <button class="tabButton" onclick="showTab('checkoutSection')">Checkout</button>
+    </div>
+
+    <!-- HOME TAB -->
+<div id="homeSection">
+    <h2>Welcome to Tha 10.29</h2>
+
+    <div class="slideshow-container">
+
+        <div class="slide fade">
+            <img src="smashburger.jpeg" class="slide-img">
+            <div class="caption">Tha Classic Smash Burger</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="choppedchz.jpeg" class="slide-img">
+            <div class="caption">Chopped Cheese</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="cajunpasta.jpeg" class="slide-img">
+            <div class="caption">Cajun Alfredo Pasta</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="chickenbitez.jpeg" class="slide-img">
+            <div class="caption">Chicken Bitez</div>
+        </div>
+
+	<div class="slide fade">
+    <img src="cheesesteak.jpeg" class="slide-img">
+    <div class="caption">Cheesesteak</div>
+</div>
+
+<div class="slide fade">
+    <img src="chickencheesestk.jpeg" class="slide-img">
+    <div class="caption">Chicken Cheesesteak</div>
+</div>
+
+<div class="slide fade">
+    <img src="salmoncheesestk.jpeg" class="slide-img">
+    <div class="caption">Salmon Cheesesteak</div>
+</div>
+
+<div class="slide fade">
+    <img src="soulplate.jpeg" class="slide-img">
+    <div class="caption">Soul Plate</div>
+</div>
+
+
+<a href="https://instagram.com/tha_10.29" target="_blank" id="igLink">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+         alt="Instagram" 
+         style="width:60px; height:60px; border-radius:8px;">
+</a>
+
+    </div>
+</div>
+
+
+    <!-- HANDHELDS TAB -->
+    <div id="handheldsSection" style="display:none;">
+        <div id="burgerMenu"></div>
+        <div id="choppedCheeseMenu"></div>
+        <div id="cheesesteakMenu"></div>
+    </div>
+
+    <!-- PASTA TAB -->
+    <div id="pastaSection" style="display:none;">
+        <div id="pastaMenu"></div>
+    </div>
+
+  <!-- SOUL BOWL TAB -->
+<div id="soulSection" style="display:none;">
+
+    <h2>Soul Bowl Sundays</h2>
+
+<p id="soulBowlMessage" style="font-weight:bold; color:#b30000; margin-bottom:10px;">
+    <!-- JS will replace this entire line -->
+    Pre‑orders open Monday–Friday until 4 PM Friday. Pickup is Sunday.
+</p>
+
+    <!-- MENU FIRST -->
+    <div id="soulMenuSection">
+<p style="font-weight:bold; color:#b30000; margin-bottom:10px;">
+    Pre‑orders open Monday–Friday until 4p.m. Friday.
+</p>
+        <div id="soulBowlMenu"></div>
+
+        <button id="startPreorderBtn" style="margin-top:20px;">
+            Pre‑Order for Sunday Pickup
+        </button>
+    </div>
+
+  <div id="preorderSection" style="display:none;">
+
+    <h2>Pre‑Order for Sunday Pickup</h2>
+
+    <!-- Name -->
+    <label for="preorderName">Name</label>
+    <input type="text" id="preorderName" name="preorderName">
+
+    <!-- Phone Number -->
+    <label for="preorderPhone">Phone Number</label>
+    <input type="text" id="preorderPhone" name="preorderPhone">
+
+    <!-- Pickup Time (dropdown 12–4 PM) -->
+    <label for="preorderTime">Pickup Time</label>
+    <select id="preorderTime" name="preorderTime">
+        <option value="">Select a time</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="12:30 PM">12:30 PM</option>
+        <option value="1:00 PM">1:00 PM</option>
+        <option value="1:30 PM">1:30 PM</option>
+        <option value="2:00 PM">2:00 PM</option>
+        <option value="2:30 PM">2:30 PM</option>
+        <option value="3:00 PM">3:00 PM</option>
+        <option value="3:30 PM">3:30 PM</option>
+        <option value="4:00 PM">4:00 PM</option>
+    </select>
+
+    <!-- Pickup Location (TBD) -->
+    <label for="preorderLocation">Pickup Location</label>
+    <input 
+    type="text" 
+    id="preorderLocation" 
+    name="preorderLocation" 
+    value="TBD" 
+    readonly 
+    style="background:#e5e5e5; cursor:not-allowed; color:#555;">
+
+
+    <h3>Your Order</h3>
+    <div id="preorderSoulBowlCart"></div>
+
+    <div id="preorderSummary"></div>
+
+    <button id="preorderBackBtn" type="button" style="margin-top:10px;">
+    ⬅ Back to Soul Bowl Menu
+    </button>
+
+    <button id="submitPreorderBtn" style="margin-top:20px;">
+        Submit Pre‑Order
+    </button>
+
+  </div>
+
+    <!-- CLOSED MESSAGE -->
+<div id="closedSection" style="display:none; text-align:center; padding:30px;">
+
+    <h2>🚧 Soul Bowl Sunday Pre-Orders Are Currently Closed</h2>
+
+    <p style="font-size:18px; margin-top:15px;">
+        Thank you for stopping by!
+    </p>
+
+    <p style="font-size:16px;">
+        Pre-orders open every <strong>Monday</strong> and remain open until
+        <strong>Friday at 4:00 PM</strong>.
+    </p>
+
+    <p style="margin-top:20px;">
+        We look forward to serving you this Sunday!
+    </p>
+
+</div>
+
+</div>
+
+    <!-- CART TAB -->
+    <div id="cartSection" style="display:none;">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <h3 id="cartTotal">Total: $0</h3>
+    </div>
+
+    <!-- CHECKOUT TAB -->
+    <div id="checkoutSection" style="display:none;">
+        <h2>Checkout</h2>
+
+        <h4>Full Name</h4>
+        <input type="text" id="customerName" placeholder="Enter your full name">
+
+        <h4>Phone Number</h4>
+        <input 
+    type="tel" 
+    id="customerPhone" 
+    placeholder="xxx-xxx-xxxx" 
+    maxlength="12">
+
+
+        <h4>Email Address (Optional)</h4>
+        <input type="email" id="customerEmail" placeholder="Enter your email">
+
+        <br><br>
+
+        <button onclick="submitOrder()">Submit Order</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

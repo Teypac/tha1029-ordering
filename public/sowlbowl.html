@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sowl Bowl Sundays</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Sowl Bowl Sundays</h1>
+
+  <div id="preorderSection" style="display:none;">
+    <h2>Pre‑Order for Sunday Pickup</h2>
+
+    <h3>Your Soul Bowl Cart</h3>
+    <div id="preorderSoulBowlCart"></div>
+
+    <form id="preOrderForm">
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>Phone</label>
+      <input type="text" name="phone" required>
+
+      <label>Order Details</label>
+      <textarea name="orderDetails" required></textarea>
+
+      <label>Pickup Time</label>
+      <select name="pickupTime" required>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="12:30 PM">12:30 PM</option>
+        <option value="1:00 PM">1:00 PM</option>
+        <option value="1:30 PM">1:30 PM</option>
+      </select>
+
+      <label>Pickup Location</label>
+      <input type="text" name="pickupLocation" required>
+
+      <button type="submit">Submit Pre‑Order</button>
+    </form>
+  </div>
+
+  <div id="closed-section" style="display:none;">
+    <h2>Pre‑orders are closed.</h2>
+    <p>Come back Monday.</p>
+  </div>
+
+  <div id="sunday-section" style="display:none;">
+    <h2>Order Your Sowl Bowl</h2>
+    <p>Sunday ordering is OPEN.</p>
+    <!-- Add your normal Sunday ordering options here -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
