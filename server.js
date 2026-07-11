@@ -31,12 +31,11 @@ app.listen(PORT, () => {
 });
 
 const nodemailer = require("nodemailer");
-
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: "iteyonb@gmail.com",
-        pass: "vgrk vbfd qflz ygiz"
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     },
     family: 4
 });
