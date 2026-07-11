@@ -22,8 +22,10 @@ app.get("/mealprep", (req, res) => {
 
 app.use(express.static("public"));
 
-app.listen(3000, () => {
-    console.log("Tha 10.29 running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Tha 10.29 running on port ${PORT}`);
 });
 
 const nodemailer = require("nodemailer");
