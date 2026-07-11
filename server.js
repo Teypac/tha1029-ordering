@@ -33,18 +33,13 @@ app.listen(PORT, () => {
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    requireTLS: true,
-
+    service: "gmail",
     auth: {
         user: "iteyonb@gmail.com",
-        pass: "vgrkvbfdqflzygiz"
-    },
-
-    family: 4
+        pass: "vgrk vbfd qflz ygiz"
+    }
 });
+
 app.post("/order", async (req, res) => {
     const { customerName, customerPhone, customerEmail, cart } = req.body;
 

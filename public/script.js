@@ -988,7 +988,8 @@ if (submitPreorderBtn) {
             pickupLocation: location
         };
 
-        const res = await fetch("/api/sowlbowl-preorder", {
+        const res = await fetch("https://tha1029-ordering.onrender.com/api/sowlbowl-preorder", {
+
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
