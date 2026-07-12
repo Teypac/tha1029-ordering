@@ -86,7 +86,7 @@ Pickup Location: ${pickupLocation}
 
   try {
     await resend.emails.send({
-  from: "Tha 10.29 <orders@tha1029.com>",
+  from: "Tha 10.29 <onboarding@resend.dev>",
   to: "iteyonb@gmail.com",
   subject: "New Soul Bowl Sunday Pre‑Order",
   text: mailOptions.text
