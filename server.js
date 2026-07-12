@@ -46,7 +46,7 @@ Total: $${cart.reduce((t, i) => t + i.price, 0).toFixed(2)}
 
   try {
    await resend.emails.send({
-  from: "Tha 10.29 <orders@tha1029.com>",
+  from: "Tha 10.29 <onboarding@resend.dev>",
   to: "iteyonb@gmail.com",
   subject: "New Tha 10.29 Order",
   text: message
@@ -131,7 +131,7 @@ ${data.notes}
 
   try {
     await resend.emails.send({
-  from: "Tha 10.29 <orders@tha1029.com>",
+  from: "Tha 10.29 <onboarding@resend.dev>",
   to: "iteyonb@gmail.com",
   subject: "New Meal Prep Submission",
   text: mailOptions.text
