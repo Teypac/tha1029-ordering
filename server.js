@@ -26,9 +26,6 @@ app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Tha 10.29 running on port ${PORT}`);
-});
 
 const nodemailer = require("nodemailer");
 
@@ -40,8 +37,15 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
   },
-  family: 4
+  tls: {
+    rejectUnauthorized: false
+  },
+  family: 4,
+  dnsLookup: (hostname, options, callback) => {
+    require("dns").lookup(hostname, { family: 4 }, callback);
+  }
 });
+
 
 app.post("/order", async (req, res) => {
   const { customerName, customerPhone, customerEmail, cart } = req.body;
@@ -144,4 +148,8 @@ ${data.notes}
     console.error("Meal prep email error:", err);
     res.status(500).json({ success: false });
   }
+});
+
+app.listen(PORT, () => {
+  console.log(`Tha 10.29 running on port ${PORT}`);
 });

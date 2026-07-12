@@ -244,30 +244,6 @@ function removeFromCart(index) {
 document.getElementById("floatingCartCount").innerText = cart.length;
 }
 
-async function submitOrder() {
-
-  const customerName =
-    document.getElementById("customerName").value;
-
-  const response = await fetch(
-    "https://tha1029-ordering.onrender.com/order",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        customerName,
-        cart
-      })
-    }
-  );
-
-  if(response.ok) {
-    alert("Order Submitted!");
-  }
-}
-
 function renderMenu() {
 
     document.getElementById("burgerMenu").innerHTML = `
