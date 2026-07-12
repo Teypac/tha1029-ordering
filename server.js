@@ -139,10 +139,16 @@ ${data.notes}
 `
     };
 
-    try {
-        await transporter.sendMail(mailOptions);
-        res.json({ success: true });
-    } catch (err) {
-        res.status(500).json({ success: false });
-    }
-});
+   try {
+    await transporter.sendMail(mailOptions);
+
+    console.log("Meal prep email sent successfully.");
+
+    res.json({ success: true });
+
+} catch (err) {
+
+    console.error("Meal prep email error:", err);
+
+    res.status(500).json({ success: false });
+}
