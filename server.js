@@ -4,6 +4,9 @@ const app = express();
 
 app.use(express.json());
 
+import { Resend } from "resend";
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 app.get("/health", (req, res) => res.send("OK"));
 
 app.get("/", (req, res) => {
@@ -27,26 +30,6 @@ app.use(express.static("public"));
 const PORT = process.env.PORT || 3000;
 
 
-const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-  tls: {
-    rejectUnauthorized: false
-  },
-  family: 4,
-  dnsLookup: (hostname, options, callback) => {
-    require("dns").lookup(hostname, { family: 4 }, callback);
-  }
-});
-
-
 app.post("/order", async (req, res) => {
   const { customerName, customerPhone, customerEmail, cart } = req.body;
 
@@ -62,12 +45,12 @@ Total: $${cart.reduce((t, i) => t + i.price, 0).toFixed(2)}
   `;
 
   try {
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: "New Tha 10.29 Order",
-      text: message
-    });
+   await resend.emails.send({
+  from: "Tha 10.29 <orders@tha1029.com>",
+  to: "iteyonb@gmail.com",
+  subject: "New Tha 10.29 Order",
+  text: message
+});
 
     res.status(200).send("Order stored");
   } catch (err) {
@@ -102,7 +85,13 @@ Pickup Location: ${pickupLocation}
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    await resend.emails.send({
+  from: "Tha 10.29 <orders@tha1029.com>",
+  to: "iteyonb@gmail.com",
+  subject: "New Soul Bowl Sunday Pre‑Order",
+  text: mailOptions.text
+});
+
     res.json({ success: true, message: "Pre‑order submitted successfully." });
   } catch (err) {
     console.log("Email error:", err);
@@ -141,7 +130,13 @@ ${data.notes}
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    await resend.emails.send({
+  from: "Tha 10.29 <orders@tha1029.com>",
+  to: "iteyonb@gmail.com",
+  subject: "New Meal Prep Submission",
+  text: mailOptions.text
+});
+
     console.log("Meal prep email sent successfully.");
     res.json({ success: true });
   } catch (err) {
