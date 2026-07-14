@@ -519,22 +519,22 @@ select {
     margin: 0 auto;
 }
 /* ============================
-   LARGE MOBILE DROPDOWNS
+   MOBILE FRIENDLY OPTIONS
+   CHECKBOXES + RADIO BUTTONS
    ============================ */
 
-#burgerMenu select,
-#choppedCheeseMenu select,
-#cheesesteakMenu select,
-#pastaMenu select,
-#soulBowlMenu select,
-#preorderSection select {
+input[type="checkbox"],
+input[type="radio"] {
+    width: 24px;
+    height: 24px;
+    transform: scale(1.3);
+    margin-right: 12px;
+    vertical-align: middle;
+}
 
-    width: 100%;
-    max-width: 320px;
-    height: 60px;
-    padding: 12px 15px;
-    font-size: 20px;
-    border-radius: 12px;
+label {
+    font-size: 18px;
+    line-height: 2;
     display: block;
-    margin: 15px auto;
+    padding: 5px 0;
 }
