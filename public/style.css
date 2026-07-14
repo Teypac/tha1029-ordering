@@ -428,11 +428,40 @@ button {
         border-radius: 14px;
     }
 
+    /* Bigger buttons + tabs */
     button,
     .actions button,
     .tab {
-        font-size: 20px;
-        padding: 18px;
+        font-size: 24px;
+        padding: 22px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Bigger select boxes */
+    select {
+        height: 52px;
+        padding: 12px 14px;
+    }
+
+    /* Shorter dropdowns inside menu cards */
+    .menu-card select {
+        max-width: 280px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Shorter cart + checkout lines */
+    #cartItems div {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Shorter Soul Bowl / Cart / Checkout sections */
+    #soulBowlSection,
+    #cartBox,
+    #checkoutSection {
+        max-width: 360px;
+        margin: 0 auto;
     }
 
     h1, h2 {
