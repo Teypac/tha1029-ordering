@@ -518,3 +518,23 @@ select {
     max-width: 360px;
     margin: 0 auto;
 }
+/* ============================
+   LARGE MOBILE DROPDOWNS
+   ============================ */
+
+#burgerMenu select,
+#choppedCheeseMenu select,
+#cheesesteakMenu select,
+#pastaMenu select,
+#soulBowlMenu select,
+#preorderSection select {
+
+    width: 100%;
+    max-width: 320px;
+    height: 60px;
+    padding: 12px 15px;
+    font-size: 20px;
+    border-radius: 12px;
+    display: block;
+    margin: 15px auto;
+}
