@@ -668,7 +668,7 @@ function showSlides() {
 function showTab(sectionId) {
 
     // HARD BLOCK: Hide Soul Bowl menu BEFORE tab switches
-    if (sectionId === "soulSection") {
+    if (sectionId === "soulBowlSection") {
         const now = new Date();
         const day = now.getDay();
         const hour = now.getHours();
@@ -699,7 +699,7 @@ function showTab(sectionId) {
         "homeSection",
         "handheldsSection",
         "pastaSection",
-        "soulSection",
+        "soulBowlSection",
         "cartSection",
         "checkoutSection"
     ];
@@ -710,7 +710,7 @@ function showTab(sectionId) {
 
     document.getElementById(sectionId).style.display = "block";
 
-    if (sectionId === "soulSection") {
+    if (sectionId === "soulBowlSection") {
         const now = new Date();
         const day = now.getDay();
         const hour = now.getHours();
