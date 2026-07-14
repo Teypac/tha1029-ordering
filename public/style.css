@@ -439,9 +439,15 @@ button {
 
     /* Bigger select boxes */
     select {
-        height: 52px;
-        padding: 12px 14px;
-    }
+    width: 100%;
+    max-width: 320px;
+    height: 56px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
 
     /* Shorter dropdowns inside menu cards */
     .menu-card select {
@@ -458,11 +464,11 @@ button {
 
     /* Shorter Soul Bowl / Cart / Checkout sections */
     #soulBowlSection,
-    #cartBox,
+    #cartSection,
     #checkoutSection {
         max-width: 360px;
         margin: 0 auto;
-    }
+}
 
     h1, h2 {
         font-size: 26px;
@@ -478,4 +484,37 @@ button {
         position: static;
         box-shadow: none;
     }
+}
+/* ============================
+   CENTERED MOBILE FORM FIELDS
+   ============================ */
+
+#checkoutSection input,
+#checkoutSection select,
+#soulBowlSection input,
+#soulBowlSection select,
+#preorderSection input,
+#preorderSection select {
+    max-width: 320px;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+/* Larger, finger-friendly dropdowns */
+
+select {
+    max-width: 320px;
+    height: 56px;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+/* Keep Cart and Checkout from stretching edge-to-edge */
+
+#cartSection,
+#checkoutSection,
+#soulBowlSection {
+    max-width: 360px;
+    margin: 0 auto;
 }
