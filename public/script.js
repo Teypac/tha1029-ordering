@@ -1013,14 +1013,3 @@ if (submitPreorderBtn) {
         document.getElementById("preorderSection").style.display = "none";
     });
 }
-function toggleCart() {
-
-    const cartContent = document.getElementById("floatingCartContent");
-
-    if (cartContent.style.display === "block") {
-        cartContent.style.display = "none";
-    } else {
-        cartContent.style.display = "block";
-    }
-
-}
