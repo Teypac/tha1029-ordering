@@ -14,6 +14,13 @@ h2 {
     text-align: center;
 }
 
+.section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -34,10 +41,8 @@ input[type="radio"] {
 }
 
 button {
-    width: 100%;
     padding: 12px;
     cursor: pointer;
-    border-radius: 10px;
 }
 
 /* ============================
@@ -96,6 +101,10 @@ button {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+button {
+    width: 100%;
+    border-radius: 10px;
+}
 
 #cartItems {
     max-height: 300px;
@@ -476,7 +485,493 @@ button {
         box-shadow: none;
     }
 }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap');
 
+body {
+    background: linear-gradient(to bottom right, #f7f2e9, #f0e6d8);
+    font-family: Arial, sans-serif;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+button {
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* ============================
+   MOBILE-FRIENDLY TABS
+   ============================ */
+.tab {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+/* ============================
+   MOBILE-FRIENDLY MENU CARDS
+   ============================ */
+.menu-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background: white;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.menu-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+#quantity {
+    width: 80px;
+}
+
+/* ============================
+   MOBILE-FRIENDLY CONTAINER
+   ============================ */
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.section {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+button {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#cartItems {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#cartTotal {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}
+
+#cartBox {
+    position: sticky;
+    top: 10px;
+    max-height: 350px;
+    overflow-y: auto;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    z-index: 10;
+}
+
+/* ORIGINAL SLIDESHOW CONTAINER */
+.slideshow-container {
+    width: 100%;
+    margin: auto;
+}
+
+
+/* Each slide */
+.slide {
+    display: none;
+    text-align: center;
+}
+
+/* ORIGINAL SLIDESHOW IMAGE STYLE */
+.slide-img {
+    width: 100%;
+    height: auto;     /* lets the image keep its natural height */
+    border-radius: 10px;
+}
+
+
+
+/* Caption */
+.caption {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Fade animation */
+.fade {
+    animation-name: fadeEffect;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: .4 }
+    to { opacity: 1 }
+}
+#floatingCart {
+    position: fixed;
+    right: 10px;
+    top: 120px;
+    width: 140px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: width 0.3s ease, height 0.3s ease;
+    overflow: hidden;
+}
+
+#floatingCartHeader {
+    background: #ffcc66;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px 12px 0 0;
+}
+
+#floatingCartContent {
+    display: none;
+    padding: 10px;
+}
+
+#floatingCart:hover {
+    width: 260px;
+}
+
+#floatingCart:hover #floatingCartContent {
+    display: block;
+}
+
+#floatingCartItems {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#floatingCartTotal {
+    margin-top: 10px;
+    font-weight: bold;
+}
+/* ----------------------------- */
+/* LANDING PAGE — HERO SECTION   */
+/* ----------------------------- */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-bottom: 4px solid #000;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+
+/* ----------------------------- */
+/* LANDING PAGE — ACTION BUTTONS */
+/* ----------------------------- */
+
+.actions {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.actions button {
+    display: block;
+    width: 80%;
+    max-width: 320px;
+    margin: 12px auto;
+    padding: 15px;
+    font-size: 18px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.actions button:hover {
+    background: #444;
+}
+
+
+/* ----------------------------- */
+/* LANDING PAGE — INFO SECTION   */
+/* ----------------------------- */
+
+.info {
+    background: #fff;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.info h2 {
+    margin-top: 0;
+}
+
+
+/* ----------------------------- */
+/* LANDING PAGE — SOCIAL + QR    */
+/* ----------------------------- */
+
+.social {
+    text-align: center;
+    padding: 20px;
+}
+
+.social a {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social a:hover {
+    text-decoration: underline;
+}
+
+.qr-box {
+    margin-top: 20px;
+}
+
+.qr-img {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+/* ============================
+   PITTSBURGH BACKGROUND HERO
+   ============================ */
+
+.hero {
+    position: relative;
+    background: url("PittsburghBkgrd.jpeg") center center / cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img {
+    display: none; /* hides your old hero.jpg */
+}
+
+.hero-text {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: #f7f7f7;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    margin: 0;
+}
+
+.hero-text p {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-weight: 700; /* BOLD */
+    color: #ffffff; /* brighter for readability */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    margin: 0;
+}
+/* ============================
+   ABOUT SECTION STYLING
+   ============================ */
+
+.about {
+    background: rgba(0, 0, 0, 0.55); /* subtle overlay */
+    color: #f2f2f2;
+    padding: 30px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.about p {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #e6e6e6;
+}
+/* ============================
+   ABOUT PHOTO STYLING
+   ============================ */
+
+.about-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #f2f2f2;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+}
+/* ============================
+   MOBILE OPTIMIZATION
+   ============================ */
+@media (max-width: 600px) {
+
+    .menu-card {
+        padding: 18px;
+    }
+
+    .menu-card img {
+        border-radius: 14px;
+    }
+
+    /* Bigger buttons + tabs */
+    button,
+    .actions button,
+    .tab {
+        font-size: 24px;
+        padding: 22px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Bigger select boxes */
+    select {
+    width: 100%;
+    max-width: 320px;
+    height: 56px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+    /* Shorter dropdowns inside menu cards */
+    .menu-card select {
+        max-width: 280px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Shorter cart + checkout lines */
+    #cartItems div {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Shorter Soul Bowl / Cart / Checkout sections */
+    #soulBowlSection,
+    #cartSection,
+    #checkoutSection {
+        max-width: 360px;
+        margin: 0 auto;
+}
+
+    h1, h2 {
+        font-size: 26px;
+    }
+
+    input, select, textarea {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    #cartBox {
+        max-height: none;
+        position: static;
+        box-shadow: none;
+    }
+}
 /* Soul Bowl field alignment fix */
 .soulbowl-field {
     display: flex;
