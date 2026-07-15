@@ -1013,3 +1013,15 @@ if (submitPreorderBtn) {
         document.getElementById("preorderSection").style.display = "none";
     });
 }
+// MOBILE-FRIENDLY CART TOGGLE
+const cartHeader = document.getElementById("floatingCartHeader");
+const cartContent = document.getElementById("floatingCartContent");
+
+cartHeader.addEventListener("click", function () {
+    // Toggle for mobile
+    if (cartContent.style.display === "block") {
+        cartContent.style.display = "none";
+    } else {
+        cartContent.style.display = "block";
+    }
+});
