@@ -504,12 +504,22 @@ function addPastaToCart() {
   });
 
   cart.push({
-    name: itemName,
-    price: Number(price.toFixed(2)),
-    selections
-  });
+  name: itemName,
+  price: Number(price.toFixed(2)),
+  selections
+});
 
-  renderCart();
+renderCart();
+
+// RESET PASTA OPTIONS
+container.querySelectorAll("input[type=radio]").forEach(radio => {
+  radio.checked = false;
+});
+
+container.querySelectorAll("input[type=checkbox]").forEach(box => {
+  box.checked = false;
+});
+
 }
 function addCheesesteakToCart() {
 
@@ -546,12 +556,22 @@ function addCheesesteakToCart() {
   });
 
   cart.push({
-    name: itemName,
-    price: Number(price.toFixed(2)),
-    selections
-  });
+  name: itemName,
+  price: Number(price.toFixed(2)),
+  selections
+});
 
-  renderCart();
+renderCart();
+
+// RESET CHEESESTEAK OPTIONS
+container.querySelectorAll("input[type=radio]").forEach(radio => {
+  radio.checked = false;
+});
+
+container.querySelectorAll("input[type=checkbox]").forEach(box => {
+  box.checked = false;
+});
+
 }
 function addSoulBowlToCart() {
 
