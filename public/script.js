@@ -106,19 +106,20 @@ soulBowl: {
     bowl: {
         name: "Soul Bowl",
         price: 20,
-        description: "Cornbread bowl filled with Jasmine Rice, Mac & Cheese, Candied Yams, Kale Greens and your choice of protein."
+        description: "Cornbread bowl filled with Jasmine Rice, Mac & Cheese, Candied Yams, and your choice of protein."
     },
 
     plate: {
         name: "Soul Plate",
         price: 15,
-        description: "Jasmine Rice, Mac & Cheese, Candied Yams, Kale Greens and a side of cornbread with your choice of protein."
+        description: "Jasmine Rice, Mac & Cheese, Candied Yams, and a side of cornbread with your choice of protein."
     },
 
     proteins: [
         "Chicken Bites",
         "Wings",
-        "Salmon"
+        "Salmon",
+	"Fried Shrimp"
     ],
 
     sauces: [
