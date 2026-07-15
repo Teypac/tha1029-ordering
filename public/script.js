@@ -160,7 +160,7 @@ function addToCart(itemName, basePrice, containerId) {
     }
   });
 
-  // SELECTS (NO MORE "on")
+  // SELECTS
   container.querySelectorAll("select").forEach(select => {
     if (select.value && select.value !== "") {
       selections.push(select.value);
@@ -174,7 +174,21 @@ function addToCart(itemName, basePrice, containerId) {
   });
 
   renderCart();
-document.getElementById("floatingCartCount").innerText = cart.length;
+  document.getElementById("floatingCartCount").innerText = cart.length;
+
+  // RESET FORM AFTER ADDING TO CART
+  container.querySelectorAll("input[type=checkbox]").forEach(box => {
+    box.checked = false;
+  });
+
+  container.querySelectorAll("input[type=radio]").forEach(radio => {
+    radio.checked = false;
+  });
+
+  container.querySelectorAll("select").forEach(select => {
+    select.selectedIndex = 0;
+  });
+
 }
 
 function renderCart() {
