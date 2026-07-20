@@ -419,11 +419,11 @@ margin-bottom:15px;">
 
 <img src="hennywingz.jpeg"
 class="weekly-slide"
-style="width:100%; max-width:350px; border-radius:12px; margin:auto;">
+style="width:100%; max-width:500px; border-radius:12px; margin:auto;"
 
 <img src="hennywings.jpeg"
 class="weekly-slide"
-style="width:100%; max-width:350px; border-radius:12px; margin:auto; display:none;">
+style="width:100%; max-width:500px; border-radius:12px; margin:auto;" display:none;">
 
 </div>
 
@@ -433,14 +433,14 @@ Hot Henny Glaze Fried Wingz & Cajun Pasta - $15
 </h3>
 
 
-<p style="font-size:18px;">
+<p style="font-size:22px;">
 Regular or Crispy wingz tossed in our SoLappin' Hot Henny Glaze with a creamy Cajun Alfredo Pasta.
 </p>
 
 
-<h4>Wing Style</h4>
+<h3 style="font-size:22px;">Wing Style</h3>
 
-<select id="weeklyWingStyle">
+<select id="weeklyWingStyle" style="font-size:18px; padding:8px;">
 
 <option value="">Choose Style</option>
 <option value="Regular">Regular</option>
@@ -452,9 +452,9 @@ Regular or Crispy wingz tossed in our SoLappin' Hot Henny Glaze with a creamy Ca
 <br><br>
 
 
-<h4>Sauce Option</h4>
+<h3 style="font-size:22px;">Sauce Option</h3>
 
-<select id="weeklySauce">
+<select id="weeklySauce" style="font-size:18px; padding:8px;">
 
 <option value="">Choose Sauce Option</option>
 <option value="Tossed">Tossed</option>
