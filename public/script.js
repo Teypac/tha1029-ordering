@@ -398,11 +398,40 @@ document.getElementById("pastaMenu").innerHTML = `
     </button>
 `;
 
-document.getElementById("pastaMenu").innerHTML = `
-    ...
-    <button onclick="addPastaToCart()">
-        Add to Cart
-    </button>
+document.getElementById("weeklyFeatureMenu").innerHTML = `
+
+<div class="menu-item">
+
+<div style="
+display:inline-block;
+background:#d62828;
+color:white;
+padding:6px 12px;
+border-radius:20px;
+font-weight:bold;
+margin-bottom:15px;">
+🔥 Weekly Feature
+</div>
+
+<br><br>
+
+<img src="hennywingz.jpeg"
+style="width:100%; max-width:350px; border-radius:12px;">
+
+<h3>
+Hot Henny Glaze Fried Wingz & Cajun Pasta - $15
+</h3>
+
+<p>
+Regular or Crispy fried wingz tossed in our SoLappin' Hot Henny Glaze with a creamy Cajun Alfredo Pasta.
+</p>
+
+<button onclick="addWeeklyFeatureToCart()">
+Add to Cart
+</button>
+
+</div>
+
 `;
 
 document.getElementById("soulBowlMenu").innerHTML = `
