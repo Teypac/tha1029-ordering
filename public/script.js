@@ -400,7 +400,7 @@ document.getElementById("pastaMenu").innerHTML = `
 
 document.getElementById("weeklyFeatureMenu").innerHTML = `
 
-<div class="menu-item">
+<div class="menu-item" style="text-align:center;">
 
 <div style="
 display:inline-block;
@@ -415,20 +415,61 @@ margin-bottom:15px;">
 
 <br><br>
 
+<div class="weekly-image-slider">
+
 <img src="hennywingz.jpeg"
-style="width:100%; max-width:350px; border-radius:12px;">
+class="weekly-slide"
+style="width:100%; max-width:350px; border-radius:12px; margin:auto;">
+
+<img src="hennywings.jpeg"
+class="weekly-slide"
+style="width:100%; max-width:350px; border-radius:12px; margin:auto; display:none;">
+
+</div>
+
 
 <h3>
 Hot Henny Glaze Fried Wingz & Cajun Pasta - $15
 </h3>
 
-<p>
-Regular or Crispy fried wingz tossed in our SoLappin' Hot Henny Glaze with a creamy Cajun Alfredo Pasta.
+
+<p style="font-size:18px;">
+Regular or Crispy wingz tossed in our SoLappin' Hot Henny Glaze with a creamy Cajun Alfredo Pasta.
 </p>
+
+
+<h4>Wing Style</h4>
+
+<select id="weeklyWingStyle">
+
+<option value="">Choose Style</option>
+<option value="Regular">Regular</option>
+<option value="Crispy">Crispy</option>
+
+</select>
+
+
+<br><br>
+
+
+<h4>Sauce Option</h4>
+
+<select id="weeklySauce">
+
+<option value="">Choose Sauce Option</option>
+<option value="Tossed">Tossed</option>
+<option value="Sauce on the Side">Sauce on the Side</option>
+
+</select>
+
+
+<br><br>
+
 
 <button onclick="addWeeklyFeatureToCart()">
 Add to Cart
 </button>
+
 
 </div>
 
@@ -789,13 +830,14 @@ function showTab(sectionId) {
     }
 
     const sections = [
-        "homeSection",
-        "handheldsSection",
-        "pastaSection",
-        "soulBowlSection",
-        "cartSection",
-        "checkoutSection"
-    ];
+    "homeSection",
+    "weeklySection",
+    "handheldsSection",
+    "pastaSection",
+    "soulBowlSection",
+    "cartSection",
+    "checkoutSection"
+];
 
     sections.forEach(id => {
         document.getElementById(id).style.display = "none";
@@ -1117,3 +1159,27 @@ renderCart();
 alert("Weekly Feature added to cart!");
 
 }
+
+function startWeeklySlideshow(){
+
+let slides = document.querySelectorAll(".weekly-slide");
+
+if(slides.length === 0){
+    return;
+}
+
+let current = 0;
+
+setInterval(() => {
+
+slides[current].style.display = "none";
+
+current = (current + 1) % slides.length;
+
+slides[current].style.display = "block";
+
+}, 3000);
+
+}
+
+startWeeklySlideshow();
