@@ -1125,6 +1125,7 @@ cartHeader.addEventListener("click", function () {
         cartContent.style.display = "block";
     }
 });
+
 function addWeeklyFeatureToCart(){
 
 const wingStyle = document.getElementById("weeklyWingStyle").value;
@@ -1132,33 +1133,38 @@ const sauce = document.getElementById("weeklySauce").value;
 
 
 if(!wingStyle || !sauce){
-alert("Please choose your wing style and sauce.");
-return;
+    alert("Please choose your wing style and sauce.");
+    return;
 }
 
 
-const item = {
-name: menuData.weeklyFeature.name,
-price: menuData.weeklyFeature.price,
-quantity: 1,
-options: [
-wingStyle,
-sauce
-]
-};
+const selections = [
+    wingStyle,
+    sauce
+];
 
 
-cart.push(item);
+cart.push({
+    name: menuData.weeklyFeature.name,
+    price: menuData.weeklyFeature.price,
+    selections
+});
 
-
-updateCart();
 
 renderCart();
+
+
+// RESET OPTIONS
+
+document.getElementById("weeklyWingStyle").value = "";
+
+document.getElementById("weeklySauce").value = "";
 
 
 alert("Weekly Feature added to cart!");
 
 }
+
 
 function startWeeklySlideshow(){
 
