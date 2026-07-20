@@ -101,6 +101,28 @@ pasta: {
     ]
 },
 
+weeklyFeature: {
+
+    name: "Hot Henny Glaze Fried Wingz & Cajun Alfredo Pasta",
+
+    price: 15,
+
+    description: "Regular or crispy fried wingz tossed in our SoLappin' Hot Henny Glaze with creamy Cajun Alfredo Pasta.",
+
+    image: "hennywingz.jpeg",
+
+    wingStyle: [
+        "Regular",
+        "Crispy"
+    ],
+
+    sauce: [
+        "SoLappin' Hot Henny Glaze",
+        "No Sauce"
+    ]
+
+},
+
 soulBowl: {
 
     bowl: {
@@ -371,6 +393,13 @@ document.getElementById("pastaMenu").innerHTML = `
 
     <br>
 
+    <button onclick="addPastaToCart()">
+        Add to Cart
+    </button>
+`;
+
+document.getElementById("pastaMenu").innerHTML = `
+    ...
     <button onclick="addPastaToCart()">
         Add to Cart
     </button>
@@ -1025,3 +1054,37 @@ cartHeader.addEventListener("click", function () {
         cartContent.style.display = "block";
     }
 });
+function addWeeklyFeatureToCart(){
+
+const wingStyle = document.getElementById("weeklyWingStyle").value;
+const sauce = document.getElementById("weeklySauce").value;
+
+
+if(!wingStyle || !sauce){
+alert("Please choose your wing style and sauce.");
+return;
+}
+
+
+const item = {
+name: menuData.weeklyFeature.name,
+price: menuData.weeklyFeature.price,
+quantity: 1,
+options: [
+wingStyle,
+sauce
+]
+};
+
+
+cart.push(item);
+
+
+updateCart();
+
+renderCart();
+
+
+alert("Weekly Feature added to cart!");
+
+}
