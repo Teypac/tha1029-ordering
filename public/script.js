@@ -9,12 +9,10 @@ const menuData = {
 smashBurger: {
     name: "Tha Classic Smash Burger",
     price: 10,
-    description: "Double smashed beef patties, American cheese, lettuce, tomato, pickles and Solappin' Smash Sauce.",
+    description: "Double smashed beef patties, American cheese, pickles and Solappin' Smash Sauce.",
 
-    options: [
+   options: [
     "No Pickles",
-    "No Lettuce",
-    "No Tomato",
     "No Cheese",
     "No Sauce"
 ],
@@ -34,16 +32,15 @@ smashBurger: {
  choppedCheese: {
     name: "Chopped Cheese",
     price: 10,
-    description: "Seasoned chopped beef, grilled onions, grilled jalapeños, American cheese, lettuce, tomato and Solappin' Sauce on a toasted hoagie.",
+    description: "Seasoned chopped beef, grilled onions, grilled jalapeños, American cheese and Solappin' Sauce on a toasted hoagie.",
 
     options: [
-        "No Cheese",
-        "No Onions",
-        "No Jalapeños",
-        "No Lettuce",
-        "No Tomato",
-        "No Sauce"
-    ]
+    "No Cheese",
+    "No Onions",
+    "No Jalapeños",
+    "No Sauce"
+  ]
+
 },
 
 cheesesteak: {
