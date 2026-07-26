@@ -31,7 +31,7 @@ smashBurger: {
 
  choppedCheese: {
     name: "Chopped Cheese",
-    price: 10,
+    price: 12,
     description: "Seasoned chopped beef, grilled onions, grilled jalapeños, American cheese and Solappin' Sauce on a toasted hoagie.",
 
     options: [
