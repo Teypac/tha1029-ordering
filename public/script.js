@@ -326,7 +326,7 @@ document.getElementById("choppedCheeseMenu").innerHTML = `
 
     <br>
 
-    <button onclick="addToCart('Chopped Cheese', 10, 'choppedCheeseMenu')">
+    <button onclick="addToCart('Chopped Cheese', 12, 'choppedCheeseMenu')">
         Add to Cart
     </button>
 `;
