@@ -403,70 +403,26 @@ document.getElementById("weeklyFeatureMenu").innerHTML = `
 display:inline-block;
 background:#d62828;
 color:white;
-padding:6px 12px;
+padding:8px 16px;
 border-radius:20px;
 font-weight:bold;
-margin-bottom:15px;">
+margin-bottom:20px;">
 🔥 Weekly Feature
 </div>
 
 <br><br>
 
-<div class="weekly-image-slider">
-
-<img src="hennywingz.jpeg"
-class="weekly-slide"
-style="width:100%; max-width:500px; border-radius:12px; margin:auto;"
-
-<img src="hennywings.jpeg"
-class="weekly-slide"
-style="width:100%; max-width:500px; border-radius:12px; margin:auto;" display:none;">
-
-</div>
-
-
-<h3>
-Hot Henny Glaze Fried Wingz & Cajun Pasta - $15
-</h3>
-
+<h2>
+New Weekly Feature Coming Soon!
+</h2>
 
 <p style="font-size:22px;">
-Regular or Crispy wingz tossed in our SoLappin' Hot Henny Glaze with a creamy Cajun Alfredo Pasta.
+Stay tuned for our next limited-time creation.
 </p>
 
-
-<h3 style="font-size:22px;">Wing Style</h3>
-
-<select id="weeklyWingStyle" style="font-size:18px; padding:8px;">
-
-<option value="">Choose Style</option>
-<option value="Regular">Regular</option>
-<option value="Crispy">Crispy</option>
-
-</select>
-
-
-<br><br>
-
-
-<h3 style="font-size:22px;">Sauce Option</h3>
-
-<select id="weeklySauce" style="font-size:18px; padding:8px;">
-
-<option value="">Choose Sauce Option</option>
-<option value="Tossed">Tossed</option>
-<option value="Sauce on the Side">Sauce on the Side</option>
-
-</select>
-
-
-<br><br>
-
-
-<button onclick="addWeeklyFeatureToCart()">
-Add to Cart
-</button>
-
+<p style="font-size:20px;">
+We’re cooking up something special for you!
+</p>
 
 </div>
 
