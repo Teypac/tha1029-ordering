@@ -782,11 +782,10 @@ function showTab(sectionId) {
         }
     }
 
-    const sections = [
+  const sections = [
     "homeSection",
+    "mainFeaturesSection",
     "weeklySection",
-    "handheldsSection",
-    "pastaSection",
     "soulBowlSection",
     "cartSection",
     "checkoutSection"
