@@ -310,6 +310,39 @@ function renderMenu() {
 
 `;
 
+document.getElementById("popupBurgerMenu").innerHTML = `
+    <h3>${menuData.smashBurger.name} - $${menuData.smashBurger.price}</h3>
+
+    <p>${menuData.smashBurger.description}</p>
+
+    <h4>Remove Options</h4>
+
+    ${menuData.smashBurger.options.map(opt => `
+        <label>
+            <input type="checkbox" value="${opt}">
+            ${opt}
+        </label><br>
+    `).join("")}
+
+    <h4>Extras</h4>
+
+    ${menuData.smashBurger.extras.map(extra => `
+        <label>
+            <input
+                type="checkbox"
+                value="${extra.name}"
+                data-price="${extra.price}">
+            ${extra.name} (+$${extra.price})
+        </label><br>
+    `).join("")}
+
+    <br>
+
+    <button onclick="addToCart('Smash Burger', 10, 'popupBurgerMenu')">
+        Add to Cart
+    </button>
+`;
+
 document.getElementById("choppedCheeseMenu").innerHTML = `
     <h3>${menuData.choppedCheese.name} - $${menuData.choppedCheese.price}</h3>
 
@@ -327,6 +360,27 @@ document.getElementById("choppedCheeseMenu").innerHTML = `
     <br>
 
     <button onclick="addToCart('Chopped Cheese', 12, 'choppedCheeseMenu')">
+        Add to Cart
+    </button>
+`;
+
+document.getElementById("popupChoppedCheeseMenu").innerHTML = `
+    <h3>${menuData.choppedCheese.name} - $${menuData.choppedCheese.price}</h3>
+
+    <p>${menuData.choppedCheese.description}</p>
+
+    <h4>Remove Options</h4>
+
+    ${menuData.choppedCheese.options.map(option => `
+        <label>
+            <input type="checkbox" value="${option}">
+            ${option}
+        </label><br>
+    `).join("")}
+
+    <br>
+
+    <button onclick="addToCart('Chopped Cheese', 12, 'popupChoppedCheeseMenu')">
         Add to Cart
     </button>
 `;
@@ -784,6 +838,7 @@ function showTab(sectionId) {
 
   const sections = [
     "homeSection",
+    "popupsSection",
     "mainFeaturesSection",
     "weeklySection",
     "soulBowlSection",
